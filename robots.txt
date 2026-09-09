@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/sitemap.xml
