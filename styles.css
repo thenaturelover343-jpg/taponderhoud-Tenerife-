@@ -51,9 +51,14 @@ img {
   gap: 24px;
 }
 
-.brand img {
-  width: 168px;
-  height: auto;
+.brand-wordmark {
+  display: inline-block;
+  max-width: 260px;
+  color: var(--brand);
+  font-size: 20px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.4px;
 }
 
 nav {
