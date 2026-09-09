@@ -1,4 +1,12 @@
 (function () {
+  var menuToggle = document.querySelector("[data-menu-toggle]");
+  var mainNav = document.querySelector("[data-main-nav]");
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", function () {
+      var open = mainNav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
   var root = "https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/";
   var params = new URLSearchParams(window.location.search);
   var lang = params.get("lang");
