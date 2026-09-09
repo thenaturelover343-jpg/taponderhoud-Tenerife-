@@ -59,15 +59,15 @@ img {
 }
 
 .brand-lockup img {
-  width: 168px;
-  height: auto;
+  width: 46px;
+  height: 58px;
   display: block;
 }
 
 .brand-wordmark {
   max-width: 210px;
-  color: var(--brand);
-  font-size: 17px;
+  color: var(--ink);
+  font-size: 18px;
   line-height: 1.08;
   font-weight: 800;
   letter-spacing: -0.4px;
