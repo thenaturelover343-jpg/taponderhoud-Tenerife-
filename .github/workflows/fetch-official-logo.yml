@@ -1,0 +1,37 @@
+name: Fetch official logo asset
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download official logo
+        run: |
+          curl --fail --location --retry 3             "https://taponderhoud.be/wp-content/uploads/2022/02/taponderhoud.be-log.svg"             --output logo-original.svg
+          test -s logo-original.svg
+      - name: Store logo locally
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("index.html")
+          s = p.read_text()
+          s = s.replace("https://taponderhoud.be/wp-content/uploads/2022/02/taponderhoud.be-log.svg", "logo-original.svg")
+          p.write_text(s)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add logo-original.svg index.html
+          if git diff --cached --quiet; then
+            echo "No logo changes needed"
+          else
+            git commit -m "Bundle official Taponderhoud logo for preview"
+            git push
+          fi
