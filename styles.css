@@ -51,11 +51,32 @@ img {
   gap: 24px;
 }
 
-.brand-wordmark {
+.brand-lockup {
+  position: relative;
   display: inline-block;
-  max-width: 260px;
+  width: 270px;
+  height: 58px;
+  overflow: hidden;
+}
+
+.brand-lockup img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 168px;
+  height: auto;
+}
+
+.brand-wordmark {
+  position: absolute;
+  z-index: 2;
+  left: 62px;
+  top: 13px;
+  max-width: 202px;
+  padding: 0 4px;
+  background: #fff;
   color: var(--brand);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.08;
   font-weight: 800;
   letter-spacing: -0.4px;
