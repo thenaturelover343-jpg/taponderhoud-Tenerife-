@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/limpieza-lineas/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/mantenimiento/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/reparacion/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/tarifas/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/contacto/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/zonas/tenerife-sur/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/zonas/adeje/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/zonas/playa-de-las-americas/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/zonas/los-cristianos/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/zonas/san-miguel/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/zonas/las-chafiras/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/</loc><priority>1.0</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/nl/</loc><priority>0.9</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/en/</loc><priority>0.9</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/limpieza-lineas/</loc><priority>0.8</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/mantenimiento/</loc><priority>0.8</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/reparacion/</loc><priority>0.8</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/tarifas/</loc><priority>0.8</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/contacto/</loc><priority>0.8</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/privacy/</loc><priority>0.4</priority></url>
+  <url><loc>https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/cookies/</loc><priority>0.4</priority></url>
 </urlset>
