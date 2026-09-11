@@ -2,9 +2,15 @@
   var menuToggle = document.querySelector("[data-menu-toggle]");
   var mainNav = document.querySelector("[data-main-nav]");
   if (menuToggle && mainNav) {
+    menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.addEventListener("click", function () {
       var open = mainNav.classList.toggle("is-open");
       menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    mainNav.addEventListener("click", function (event) {
+      if (!event.target.closest("a")) return;
+      mainNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
   }
   var root = "https://thenaturelover343-jpg.github.io/taponderhoud-Tenerife-/";
