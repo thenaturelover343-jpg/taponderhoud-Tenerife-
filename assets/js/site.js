@@ -17,57 +17,24 @@
   var params = new URLSearchParams(window.location.search);
   var lang = params.get("lang");
   if (lang === "nl" || lang === "en") window.location.replace(root + lang + "/");
-
-  var form = document.querySelector("[data-contact-form]");
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      var data = new FormData(form);
-      var subject = "Solicitud desde la web";
-      var body = [
-        "Nombre: " + (data.get("name") || ""),
-        "Email: " + (data.get("email") || ""),
-        "Localidad: " + (data.get("location") || ""),
-        "Mensaje: " + (data.get("message") || "")
-      ].join("\n");
-      window.location.href = "mailto:info@tapservicetenerife.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    });
-  }
-
-  var consent = localStorage.getItem("tap_cookie_ok");
-  var banner = document.querySelector("[data-cookie-banner]");
-  var accept = document.querySelector("[data-cookie-accept]");
-  function hideBanner() {
-    if (banner) banner.hidden = true;
-    document.body.classList.remove("cookie-open");
-  }
-  if (banner && consent !== "1") {
-    setTimeout(function () {
-      banner.hidden = false;
-      document.body.classList.add("cookie-open");
-    }, 1800);
-  }
-  if (accept) {
-    accept.addEventListener("click", function () {
-      localStorage.setItem("tap_cookie_ok", "1");
-      hideBanner();
-    });
-  }
 })();
 
 (function(){
+  if(window.innerWidth<900) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var hero=document.querySelector('.hero');
   if(!hero||document.getElementById('beer-pour-canvas')) return;
   var c=document.createElement('canvas');
   c.id='beer-pour-canvas';
   c.setAttribute('aria-hidden','true');
-  c.style.cssText='position:absolute;right:12px;bottom:16px;width:200px;height:320px;z-index:30;pointer-events:none;';
+  c.style.cssText='position:absolute;right:24px;bottom:28px;width:180px;height:290px;z-index:4;pointer-events:none;';
   hero.appendChild(c);
   var ctx=c.getContext('2d'); if(!ctx) return;
   function fit(){
+    if(window.innerWidth<900){ c.style.display='none'; return; }
+    c.style.display='block';
     var r=Math.min(2,window.devicePixelRatio||1);
-    var W=window.innerWidth<640?110:200, H=window.innerWidth<640?176:320;
+    var W=180,H=290;
     c.style.width=W+'px'; c.style.height=H+'px';
     c.width=Math.round(W*r); c.height=Math.round(H*r);
     ctx.setTransform(r,0,0,r,0,0); c._W=W; c._H=H;
@@ -77,7 +44,9 @@
   for(var i=0;i<16;i++) bs.push({x:.3+Math.random()*.4,p:Math.random(),s:.4+Math.random()*.8,r:2+Math.random()*3});
   function loop(now){
     requestAnimationFrame(loop);
+    if(window.innerWidth<900) return;
     var w=c._W,h=c._H,t=(now-t0)/1000,fill=Math.min(1,t/3);
+    if(!w) return;
     ctx.clearRect(0,0,w,h);
     var gx=w*0.2,gy=h*0.22,gw=w*0.6,gh=h*0.7;
     ctx.fillStyle='#e8c36a'; ctx.fillRect(w*0.45,h*0.02,w*0.1,h*0.15);

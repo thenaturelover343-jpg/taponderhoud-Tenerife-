@@ -1,19 +1,29 @@
-:root{--ink:#14120f;--paper:#f6f1e8;--foam:#fffaf3;--amber:#c4842a;--gold:#e8c36a;--sea:#1c4a4a;--sand:#d8c3a0;--line:rgba(20,18,15,.12)}
+:root{--ink:#14120f;--paper:#f6f1e8;--foam:#fffaf3;--amber:#c4842a;--gold:#e8c36a;--sea:#1c4a4a;--sand:#d8c3a0}
 html{scroll-behavior:smooth}
 body.aww{background:var(--paper);color:var(--ink)}
 .hero{position:relative;overflow:hidden}
 .hero-media{z-index:0}
-.bubbles-gl{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.bubbles-gl{position:absolute;inset:0;pointer-events:none;z-index:2}
 .hero-content{position:relative;z-index:3}
 .pour{display:none!important}
-#beer-pour-canvas{position:absolute;right:12px;bottom:16px;z-index:30;pointer-events:none}
+#beer-pour-canvas{position:absolute;right:24px;bottom:28px;z-index:4;pointer-events:none}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero .actions .btn{min-height:48px}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
-.contrast{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:22px;overflow:hidden;min-height:280px}
+.contrast{display:grid;grid-template-columns:1fr 1fr;border-radius:22px;overflow:hidden;min-height:280px}
 .contrast b{display:flex;align-items:end;padding:1.2rem;color:#fff;font-family:Playfair Display,serif;font-size:1.4rem}
 .contrast .dirty{background:linear-gradient(160deg,#3a2a1a,#1a120c),url("../img/taponderhoud-2-origineel.jpg") center/cover}
 .contrast .clean{background:linear-gradient(160deg,rgba(28,74,74,.35),rgba(20,18,15,.2)),url("../img/taponderhoud-1-origineel.jpg") center/cover}
-.price-table{transition:transform .25s ease,box-shadow .25s ease}
 .price-table:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,18,15,.12)}
-.wa{position:fixed;left:18px;bottom:18px;z-index:40;background:#25d366;color:#fff;padding:.7rem 1rem;border-radius:999px;font-weight:700;text-decoration:none}
-@media(max-width:800px){.contrast{grid-template-columns:1fr}.wa{left:12px;bottom:72px}}
+.wa,.floating-call{display:none!important}
+@media(max-width:900px){
+  #beer-pour-canvas,.bubbles-gl,.pour{display:none!important}
+  .hero{min-height:auto}
+  .hero-content{padding:2.2rem 1.15rem 2.4rem}
+  .hero h1{font-size:2rem;line-height:1.15;max-width:18ch}
+  .hero-content p{font-size:1rem;line-height:1.45;max-width:36ch}
+  .hero .actions{display:flex;flex-direction:column;align-items:stretch;gap:.65rem;margin-top:1.2rem}
+  .hero .actions .btn{width:100%;text-align:center;justify-content:center;box-sizing:border-box}
+  .contrast{grid-template-columns:1fr}
+}
