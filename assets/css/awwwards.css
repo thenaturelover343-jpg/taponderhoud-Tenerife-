@@ -1,0 +1,21 @@
+:root{--ink:#14120f;--paper:#f6f1e8;--foam:#fffaf3;--amber:#c4842a;--gold:#e8c36a;--sea:#1c4a4a;--sand:#d8c3a0;--line:rgba(20,18,15,.12)}
+html{scroll-behavior:smooth}
+body.aww{background:var(--paper);color:var(--ink)}
+.hero{position:relative}
+.pour{position:absolute;right:8%;bottom:8%;width:140px;height:220px;pointer-events:none;z-index:2}
+.pour .glass{position:absolute;inset:40px 30px 0;border:2px solid rgba(255,250,243,.7);border-radius:0 0 28px 28px;overflow:hidden}
+.pour .beer{position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(#c4842a,#8a4a12);animation:fill 3.4s .4s ease forwards}
+.pour .head{position:absolute;left:0;right:0;bottom:0;height:18px;background:#fffaf3;opacity:0;animation:foam 3.4s .4s ease forwards}
+.pour .tap{position:absolute;top:0;left:50%;width:18px;height:46px;margin-left:-9px;background:linear-gradient(#e8c36a,#9a6b20);border-radius:4px}
+@keyframes fill{to{height:72%}}
+@keyframes foam{60%{opacity:0}100%{opacity:1;transform:translateY(-118px)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:22px;overflow:hidden;min-height:280px}
+.contrast b{display:flex;align-items:end;padding:1.2rem;color:#fff;font-family:Playfair Display,serif;font-size:1.4rem}
+.contrast .dirty{background:linear-gradient(160deg,#3a2a1a,#1a120c),url("../img/taponderhoud-2-origineel.jpg") center/cover}
+.contrast .clean{background:linear-gradient(160deg,rgba(28,74,74,.35),rgba(20,18,15,.2)),url("../img/taponderhoud-1-origineel.jpg") center/cover}
+.price-table{transition:transform .25s ease,box-shadow .25s ease}
+.price-table:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,18,15,.12)}
+.wa{position:fixed;left:18px;bottom:18px;z-index:40;background:#25d366;color:#fff;padding:.7rem 1rem;border-radius:999px;font-weight:700;text-decoration:none}
+@media(max-width:800px){.pour{display:none}.contrast{grid-template-columns:1fr}.wa{left:12px;bottom:72px}}
