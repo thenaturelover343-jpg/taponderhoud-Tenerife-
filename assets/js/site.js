@@ -37,12 +37,21 @@
 
   var consent = localStorage.getItem("tap_cookie_ok");
   var banner = document.querySelector("[data-cookie-banner]");
-  if (banner && consent !== "1") banner.hidden = false;
   var accept = document.querySelector("[data-cookie-accept]");
+  function hideBanner() {
+    if (banner) banner.hidden = true;
+    document.body.classList.remove("cookie-open");
+  }
+  if (banner && consent !== "1") {
+    setTimeout(function () {
+      banner.hidden = false;
+      document.body.classList.add("cookie-open");
+    }, 1800);
+  }
   if (accept) {
     accept.addEventListener("click", function () {
       localStorage.setItem("tap_cookie_ok", "1");
-      if (banner) banner.hidden = true;
+      hideBanner();
     });
   }
 })();
